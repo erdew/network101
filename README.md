@@ -1,20 +1,20 @@
 # Packet Tracer ToDo List
 
-1. iki PC'ye IP verip direkt birbirlerine bağlayıp manuel ping at.
-2. Bir PC ve bir Router'ı direkt Ethernet'ten birbirlerine bağlayıp
+1. 2 adet PC'ye IP verip direkt birbirlerine bağlayıp manuel ping at.
+2. 1 PC ve 1 Router'ı direkt Ethernet'ten birbirlerine bağlayıp
     PC'den manuel ping at.
-3. 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir PC'nin bir
-    diğerine Switch aracılığı ile ping atabilmesini sağla.
+3. 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir
+    diğerine Switch aracılığı ile Ping atabilmesini sağla.
 4. Aynı Network'ten bir tane daha oluştur.
 5. İki Network'ün Router'larını birbirlerine bağla ve
     Configuration'larını yap. Yaptığın Configuration'ları yedekle.
 
 `
-    show history (Yazılan tüm komutları gösterir)
-    show ip interface (Interface hakkında detaylı bilgi verir)
-    show ip interface brief (Intereface hakkında özet bilgi verir)
-    show run (Çalışan Interface'leri gösterir)
-    no ip address (Verilmiş olan IP'yi siler)
+    **show history** (Yazılan tüm komutları gösterir)
+    **show ip interface** (Interface hakkında detaylı bilgi verir)
+    **show ip interface brief** (Intereface hakkında özet bilgi verir)
+    **show run** (Çalışan Interface'leri gösterir)
+    **no ip address** (Verilmiş olan IP'yi siler)
 
 `
 
@@ -23,39 +23,38 @@
 8. Başka bir Router daha oluştur. Bu Router'a TelNet ile Random Password'lar ata. Daha sonra bu Router'a bağlanılamayacağı için Password Resetleme sürecini uygula.
 
 `
-     show version (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
-     show flash (Kullandığımız cihazı IOS'unun adını gösterir)
+     **show version** (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
+     **show flash** (Kullandığımız cihazı IOS'unun adını gösterir)
 
 `
 
-9. Bir server oluştur. Bu server'ı TFTP trafiğini sağlayabilecek hale
-    getiren süreci uygula.
+9. 1 adet Server oluştur. Bu server'ı TFTP trafiğini sağlayabilecek hale getiren süreci uygula.
 
 10. Router'lardan herhangi birinin NVRAM'ine yedekleme sürecini uygula.
 11. Router'lardan herhangi birinde Flash'ı sil. IOS yüklenememe sorunu ile karşılaşıp çözüme giden süreci uygula.
 
 
 `
-     delete (Router'ların CLI'ında silme komutudur) delete flash
+     **delete** (Router'ların CLI'ında silme komutudur) delete flash
     (Router'daki Flash bölümünü komple siler)
     
-    show ip route (Router'a yapılan IP Routing'leri ve Router'a Directly Connected olan Network'leri gösterir)    
+    **show ip route** (Router'a yapılan IP Routing'leri ve Router'a Directly Connected olan Network'leri gösterir)    
 `
 
 12. IP Routing'i 0.0.0.0 0.0.0.0 ile yap.
 13. Router'lara Serial Port'tan bağlantı kur.(Eski, güncel olarak sektörde kullanılmaz. Fakat CCNA Sınavlarında çıkar.)
-14. Birden çok Router'a TelNet ile bağlan TelNet arasındaki Session'ları düzenle.
+14. Birden çok Router'a TelNet ile bağlan, TelNet'ler arasındaki Session'ları düzenle.
 
 
 `
-    show sessions (Router üzerinden kaç tane Router'a bağlı olunduğunu yani kaç tane "oturum" olduğunu gösterir.)
+    **show sessions** (Router üzerinden kaç tane Router'a bağlı olunduğunu yani kaç tane "oturum" olduğunu gösterir.)
 `
 
 15. Router'lara isim ata.
 
 `
-    show hosts (Router'ların IP'lerini ve isimlerini listeler.)
-    show cdp neighbors (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
+    **show hosts** (Router'ların IP'lerini ve isimlerini listeler.)
+    **show cdp neighbors** (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
 `
 
 16. DNS sürecini uygula.
