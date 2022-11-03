@@ -19,7 +19,7 @@
 
 
 6. [ ] Basic Router Configuration'ları yap ve yaptığın tüm Configuration'ları yedekle.
-7. [ ] Yeni bir Router oluşturup mevcut Router'lardan birisine bağla. Yeni eklediğin Router'a mevcuttaki Router'lardan birisi üzerinden TelNet ile bağlantı kur. Yeni Router'ın Configuration'larını  TelNet bağlantısı ile yap ve yaptığın tüm Configuration'ları yedekle.
+7. [ ] Yeni bir Router oluşturup mevcut Router'lardan birisine kablo ile bağla. Yeni eklediğin Router'a mevcuttaki Router'lardan birisi üzerinden TelNet ile bağlantı kur. Yeni Router'ın Configuration'larını  TelNet bağlantısı ile yap ve yaptığın tüm Configuration'ları yedekle.
 8. [ ] Başka bir Router daha oluştur. Bu Router'a TelNet ile Random Password'lar ata. Daha sonra bu Router'a bilmediğimiz bir Password atandığı için Password Resetleme sürecini uygula.
 
 ```
