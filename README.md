@@ -11,10 +11,10 @@
 
 ```
     ==show history== (Yazılan tüm komutları gösterir)
-    **show ip interface** (Interface hakkında detaylı bilgi verir)
-    **show ip interface brief** (Intereface hakkında özet bilgi verir)
-    **show run** (Çalışan Interface'leri gösterir)
-    **no ip address** (Verilmiş olan IP'yi siler)
+    ==show ip interface== (Interface hakkında detaylı bilgi verir)
+    ==show ip interface brief== (Intereface hakkında özet bilgi verir)
+    ==show run== (Çalışan Interface'leri gösterir)
+    ==no ip address== (Verilmiş olan IP'yi siler)
 ```
 
 
@@ -23,8 +23,8 @@
 8. [ ] Başka bir Router daha oluştur. Bu Router'a TelNet ile Random Password'lar ata. Daha sonra bu Router'a bilmediğimiz bir Password atandığı için Password Resetleme sürecini uygula.
 
 ```
-     **show version** (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
-     **show flash** (Kullandığımız cihazı IOS'unun adını gösterir)
+     ==show version== (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
+     ==show flash== (Kullandığımız cihazı IOS'unun adını gösterir)
 ```
 
 9. [ ] 1 adet Server oluştur. Bu Server'ı TFTP trafiğini yönetebilir hale getiren süreci uygula.
@@ -34,10 +34,10 @@
 
 
 ```
-     **delete** (Router'ların CLI'ında silme komutudur) delete flash
+     ==delete== (Router'ların CLI'ında silme komutudur) delete flash
     (Router'daki Flash bölümünü komple siler)
     
-    **show ip route** (Router'a yapılan IP Routing'leri ve Router'a Directly Connected olan Network'leri gösterir)    
+    ==show ip route== (Router'a yapılan IP Routing'leri ve Router'a Directly Connected olan Network'leri gösterir)    
 ```
 
 12. [ ] IP Routing'i 0.0.0.0 0.0.0.0 ile yap.
@@ -46,14 +46,14 @@
 
 
 ```
-    **show sessions** (Router üzerinden kaç tane Router'a bağlı olunduğunu yani kaç tane "oturum" olduğunu gösterir.)
+    ==show sessions== (Router üzerinden kaç tane Router'a bağlı olunduğunu yani kaç tane "oturum" olduğunu gösterir.)
 ```
 
 15. [ ] Router'lara isim ata.
 
 ```
-    **show hosts** (Router'ların IP'lerini ve isimlerini listeler.)
-    **show cdp neighbors** (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
+    ==show hosts== (Router'ların IP'lerini ve isimlerini listeler.)
+    ==show cdp neighbors== (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
 ```
 
 16. [ ] DNS sürecini uygula.
