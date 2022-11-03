@@ -1,8 +1,8 @@
 # Packet Tracer ToDo List
 
-1. 2 adet PC'ye IP verip direkt birbirlerine bağlayıp manuel ping at.
+1. 2 adet PC oluştur, Ethernet'ten direkt bağla ve PC'lere IP ver. Terminal'den Ping at.
 2. 1 PC ve 1 Router'ı direkt Ethernet'ten birbirlerine bağlayıp
-    PC'den manuel ping at.
+    PC'denTerminal'den Ping at.
 3. 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir
     diğerine Switch aracılığı ile Ping atabilmesini sağla.
 4. Aynı Network'ten bir tane daha oluştur.
