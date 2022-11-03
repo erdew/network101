@@ -1,4 +1,4 @@
-#Packet Tracer ToDo List
+# Packet Tracer ToDo List
 
 1. iki PC'ye IP verip direkt birbirlerine bağlayıp manuel ping at.
 2. Bir PC ve bir Router'ı direkt Ethernet'ten birbirlerine bağlayıp
