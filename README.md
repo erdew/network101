@@ -6,8 +6,8 @@
 3. [x] 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir
     diğerine Switch aracılığı ile Ping atabilmesini sağla.
 4. [x] Farklı 1 adet daha Network oluştur.
-5. [ ] İki Network'ün Router'larını birbirlerine bağla ve
-    Configuration'larını yap. Yaptığın Configuration'ları yedekle.
+5. [x] İki Network için de iki adet Router oluştur. Router'larını birbirlerine bağla ve
+    Configuration'larını yap. Yaptığın Configuration'ları yedekle. Oluşturduğun Network'lerin iletişimi için Router'lara Static IP Routing yap.
 
 ```
     **show history** (Yazılan tüm komutları gösterir)
