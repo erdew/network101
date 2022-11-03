@@ -5,7 +5,7 @@
     PC'denTerminal'den Ping at.
 3. 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir
     diğerine Switch aracılığı ile Ping atabilmesini sağla.
-4. Aynı Network'ten bir tane daha oluştur.
+4. Farklı 1 adet daha Network oluştur.
 5. İki Network'ün Router'larını birbirlerine bağla ve
     Configuration'larını yap. Yaptığın Configuration'ları yedekle.
 
