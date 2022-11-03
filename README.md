@@ -10,7 +10,7 @@
     Configuration'larını yap. Yaptığın Configuration'ları yedekle. Oluşturduğun Network'lerin iletişimi için Router'lara Static IP Routing yap.
 
 ```
-    **show history** (Yazılan tüm komutları gösterir)
+    ==show history== (Yazılan tüm komutları gösterir)
     **show ip interface** (Interface hakkında detaylı bilgi verir)
     **show ip interface brief** (Intereface hakkında özet bilgi verir)
     **show run** (Çalışan Interface'leri gösterir)
