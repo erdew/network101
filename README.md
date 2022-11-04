@@ -19,8 +19,8 @@
 
 
 6. [x] Basic Router Configuration'ları yap ve yaptığın tüm Configuration'ları yedekle.
-7. [x] Yeni bir Router oluşturup mevcut Router'lardan birisine kablo ile bağla. Yeni eklediğin Router'a mevcuttaki Router'lardan birisi üzerinden TelNet ile bağlantı kur ve yaptığın tüm Configuration'ları yedekle.
-8. [ ] Başka bir Router daha oluştur. Bu Router'a mevcuttaki Network'lerden birindeki PC'lerden biri si ile TelNet bağlantısı kur ve Router'a Random Password'lar ata. Daha sonra bu Router'a bilmediğimiz bir Password atandığı için Password Resetleme sürecini uygula.
+7. [x] Yeni bir Router oluşturup mevcut Router'lardan birisine kablo ile bağla. Yeni eklediğin Router'a mevcuttaki Router'lardan birisi üzerinden TelNet ile bağlantı kur, Basic Configuration'ları yap ve yaptığın tüm Configuration'ları yedekle.
+8. [ ] Yeni bir Router oluştur. Bu Router'ın Console ve Enable Port'larına Random Password'lar ata. Bilmediğimiz bir Password atanmış olacağından bu Router'a bağlanabilmek için Password Resetleme sürecini uygula.
 
 ```
      ==show version== (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
