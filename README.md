@@ -20,17 +20,18 @@
 
 6. [x] Basic Router Configuration'ları yap ve yaptığın tüm Configuration'ları yedekle.
 7. [x] Yeni bir Router oluşturup mevcut Router'lardan birisine kablo ile bağla. Yeni eklediğin Router'a mevcuttaki Router'lardan birisi üzerinden TelNet ile bağlantı kur, Basic Configuration'ları yap ve yaptığın tüm Configuration'ları yedekle.
-8. [ ] Yeni bir Router oluştur. Bu Router'ın Console ve Enable Port'larına Random Password'lar ata. Bilmediğimiz bir Password atanmış olacağından bu Router'a bağlanabilmek için Password Resetleme sürecini uygula.
+8. [x] Herhangi bir Router için IP Routing'i 0.0.0.0 0.0.0.0 ile yap.
+9. [x] Yeni bir Router oluştur. Bu Router'ın Console ve Enable Port'larına Random Password'lar ata. Bilmediğimiz bir Password atanmış olacağından bu Router'a bağlanabilmek için Password Resetleme sürecini uygula.
 
 ```
      ==show version== (Router hakkında bilgi verir, Router'ın hangi Conf modunda açıldığını gösterir)
      ==show flash== (Kullandığımız cihazı IOS'unun adını gösterir)
 ```
 
-9. [ ] 1 adet Server oluştur. Bu Server'ı TFTP trafiğini yönetebilir hale getiren süreci uygula.
+10. [ ] 1 adet Server oluştur. Bu Server'ı TFTP trafiğini yönetebilir hale getiren süreci uygula.
 
-10. [ ] Router'lardan herhangi birinin NVRAM'ine yedekleme sürecini uygula.
-11. [ ] Router'lardan herhangi birinde Flash'ı sil. IOS yüklenememe sorunu ile karşılaşılacağından bunun çözüme giden süreci uygula.
+11. [ ] Router'lardan herhangi birinin NVRAM'ine yedekleme sürecini uygula.
+12. [ ] Router'lardan herhangi birinde Flash'ı sil. IOS yüklenememe sorunu ile karşılaşılacağından bunun çözüme giden süreci uygula.
 
 
 ```
@@ -40,7 +41,6 @@
     ==show ip route== (Router'a yapılan IP Routing'leri ve Router'a Directly Connected olan Network'leri gösterir)    
 ```
 
-12. [ ] IP Routing'i 0.0.0.0 0.0.0.0 ile yap.
 13. [ ] Router'lara Serial Port'tan bağlantı kur.(Eski, güncel olarak sektörde kullanılmaz. Fakat CCNA sınavlarında çıkar.)
 14. [ ] Birden fazla Router'a TelNet ile bağlan, TelNet'ler arasındaki Session'ları düzenle.
 
