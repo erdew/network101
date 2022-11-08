@@ -67,14 +67,68 @@ ping x.x.x.x
 ```
 10. UDP ve TCP adında gönderilen paketlerin gidip gitmediğini ya da cevap gelip gelmediği kontrol eden iki farklı İletişim Protokol'ü vardır.
 11. UDP, paketlerin tamamının gönderilme zorunluluğunun olmadığı protokoldür ve TCP'ye göre daha hızlı bir bağlantı sağlar fakat kesintiler, kayıplar vs. yaşanabilir. 
-12. 
-
-
-
-
-
-
-
+12. TCP, paketlerin tamamının gönderilme zorunluluğu olan protokoldür. UDP'ye göre bazı bağlantılarda daha yavaş olabilir fakat ne gönderildiyse hedef gönderilenlerin tamamına ulaşır.
+13. Network'ler arasında bağlantı kurmak istediğimizde artık Switch yeterli olmamaktadır. Çünkü Network'ler arası bağlantı demek Layer 3 cihazların ihtiyaç duyulduğu bir bağlantı demektir.
+14. Router'lar Layer 3'te çalışan cihazlardır.
+15. Bir Router'ın her bir Interface'i yani Ethernet Port'u başka bir Network'e bağlanır.
+16. Router'ın Interface'lerinden birisine bağlı olan bir Switch ile ona bağlı olan Client'lerin tamamı bir Network'un içinde demektir.
+17. Client'lerden, Router'ın başka bir Interface'inde bulunan diğer Client'lere paket göndermek istendiğinde bu paketlerin Router'a gönderilebiliyor olması gerekmektedir.
+18. Router'ların Interface'lerine atadığımız IP adresleri o Interface'e bağlı olan Network'teki tüm Client'ler için "Default Gateway"'dir.
+19. Default Gateway Network'ün çıkış kapısıdır.
+20. Default Gateway genellikle tercihen o Network'teki atanabilir ilk IP adresidir.
+21. Client'ler paketleri kendi sahip oldukları IP ve Subnet Mask bilgisine göre gönderirler. Çünkü sahip oldukları tek bilgi kendi üzerlerine yazılmış olan, kendileri hakkındaki bilgilerden ibarettir. O Client'e sadece hedef IP adresi bilgisi verilir ve IP adresinin hangi Subnet Mask'a sahip olduğunu bilmediği için kendi sahip olduğu Subnet Mask'la karşılaştırarak hangi Network'e gideceğini anlar. Yani hedefin Subnet Mask'ı ile Client'in kendi Subnet Mask'ı aynı ise bu hedefin Client'in kendisi ile aynı Network'te olduğu anlamına gelir ve bu paketi Switch'e gönderir. Fakat hedefin Subnet Mask'ı farklı ise kendisinin hedef ile aynı Network'te olmadığını anlayıp direkt olarak Gateway'e gönderir.
+22. Bu bağlamda bir Network'te yapılacak olan Broadcast maksimum o Network'ün Gateway'ine yani Router'ın içerideki Interface'ine kadar gidebilir.
+23. Bir Network'ün ilk IP'si o Network'ın ID'si anlamına gelir.
+24. Bir Network'ün en son IP'si ise o Network'ün Broadcast ID'si anlamına gelir.
+25. İlk ve son IP'ler hiç bir cihaza IP olarak atanamazlar. Çünkü bu IP'lerin yukarıdaki maddelerde bahsedilen özel anlamları vardır.
+26. Bir Network'te toplamda ne kadar IP atanabileceğini "Subnet Mask" belirler.
+27. Network'ün toplamda kaç Client içereceğini ifade eden sayıya Host denir.
+28. Subnet Mask'ın evrensel ve standart olarak IP'lerin yanına "/x"(192.168.1.0/24) ile beraber yazılan versiyonuna "Prefix" adıverilmiştir.
+29. Bir önceki maddedeli /24 sayısı Subnet Mask'ın Binary cinsinden hesaplandığında soldan kaç adet 1 içerdiğini belirtir.
+30. IP'ler 2^32 üzerinden hesaplandıkları için, Subnet Mask'ta maksimum 32 adet 1 veya 0 olabilir.
+31. Prefix'in 24 olması, soldan ilk 24 Bit'lik Binary cinsinden 1 sayısının Network'ü ifade ettiği anlamına gelir.
+31. 24 tane 1 var ise her Octed'in 8 bit'ten oluştuğunu hesaba kattığımızda soldan 3 Octed'in Network'ü ifade ettiğini anlayabiliriz.
+32. Yukarıdaki senaryoya göre 192.168.1.0 bu Network'ün ID'sidir. 192.168.1.255 ise Broadcast'dir.
+33. Host olarak son Octed'in tamamı kaldığı için 2 üzeri 8'e eşit Host sayımız var demektir. 2 üzeri 8 = 256'dır. İlk ve son IP'leri atayamadığımız için 256 - 2 = 254 toplam atanabilir IP sonucuna erişebiliriz. Yukarıdaki senaryoya göre IP ve Subnet Mask'ın Binary karşılıkları;
+```
+-------------------------------------
+| 	   192.168.1.40/24          |
+|11000000.10101000.00000001.00101000|
+-------------------------------------
+---------------------------
+|	    /24		  |
+|	255.255.255.0	  |
+---------------------------
+```
+34. Subnet Mask'ların maksimum değeri 255 olabilir çünkü; Binary olarak Octed üzerinden soldan sağa ilerledikleri için sadece Binary 1 olanların değerlerinin toplamına eşit olan sayıları alabilirler.
+35. IP'ler maksimum 2 üzeri 32'den verilmek zorunda olduğu için gerçek dünyada IP'lerin yetersiz kalması gibi bir tehlike söz konusudur.
+36. Muhtemelen internetin ilk geliştirildiği dönemlerde bu denli bir trafik oluşacağı öngörülmemişti.
+Ayrıca teknik olarak IP'ler üzerinde yapılan bir hata yüzünden de çok ciddi sayıda IP gerçek dünyada kullanılamaz durumdadır.
+37. IP'ler A, B, C, D, E Class'larına ayrılırlar;
+```
+A)  0.0.0.0  - 127.255.255.255 /8, 16, 24(Subnetting yapılmamış)
+B) 128.0.0.0 - 192.255.255.255
+C) 192.0.0.0 - 223.255.255.255
+D) 224.0.0.0 - 239.255.255.255
+E) 240.0.0.0 - 255.255.255.255
+```
+38. 127 Octed'i ile başlayan hiç bir IP kullanılamaz.
+39. Bu adrese "Loopback Address" denir. Fakat herhangi bir makinede 127 ile başlayan herhangi bir IP Ping attığımızda bu kendi Ethernet Port'unu Ping'lediği anlamına gelir. Cevap gelmesi Ethernet Port'unun çalışır durumda olduğunu gösterir. Cevap gelmemesi bozuk olabileceği anlamına gelebilir.
+40. Loopback Address olarak 127'nin belirlenmesi aslında teknik bir hatadır.
+Çünkü 127'lik IP bloklarının tamamını içerdiği için 2^24 farklı IP adresinin kullanılamamasına sebep olur.
+41. D Class IP'ler(224.0.0.0 - 239.255.255.255) sadece Multicast yayınlar için kullanılır.
+42. E Class IP'ler(240.0.0.0 - 255.255.255.255) geliştirici kurullarının çalışmaları için ayrılmıştır.
+43. Modemin dış bacağına A, B, C Class'larından başka bir IP atanmaz. Bu IP'lerin internete çıkma yeteneği olduğu için ve bir IP'yi sadece bir modem kullanabileceği için bu IP'ler ücretlidir. Fakat yukarıdaki durum sadece modemin dış bacağı yani internete çıkan Interface'i ile alakalıdır. Yani modemin öteki yüzünde yani bizim cihazlarımızı modeme bağladığımız kendi Network'ümüzde bu IP'leri kullanmamız hem çok mantıksız hem de mümkün değildir. Çünkü durum böyle olsaydı biz her internete bağlanmak için kullandığımız cihaz için ekstra IP kiralamak zorunda kalırdık. Bunun yerine kendi Network'lerimizde Private olarak ayrılmış IP'leri kullanırız. Zaten evlerimizdeki modemler de bu şekilde yapılandırılmıştır. Örneğin, telefonunuza modemden bağlandığınızda muhtemelen telefonunuza atanan IP adresi 192.168.0.x'li bir IP adresi olacaktır.
+44. Private IP adresleri şunlardır;
+```
+10.0.0.0 - 10.255.255.255
+172.16.0.0 - 172.31.255.255
+192.168.0.0 - 192.168.255.255
+```
+45. Eğer çok büyük bir şirket tipolojisine sahipsek 10.0 Network'ünü kullanmak daha maktıklıdır.
+Çünkü diğerine göre 2^8 daha fazla IP tanımlanabilir.
+46. IP'lerin dağıtımını ISP(Internet Sevice Provider) yapar. ISP Private IP'leri yukarıda anlattığımız sebeplerden dolayı ayırmıştır. Sonuç olarak A, B, C Class'larından başka hiç bir IP internete çıkamaz. Bir Network'ün tamamının internete çıkabilmesi için gerçek IP'ye sahip bir dış bacağa bağlı olması yeterlidir. Private IP'ler ücretsizdir. ISP size atadığı Static IP'yi başkasına veremez.
+47. Aslında ISP direkt olarak sizin Modem'inize gerçek IP atamaz. Sadece sizin Servis Sağlayıcı'nıza gerçek bir IP verir. Servis Sağlayıcı'lar tıpkı kendi evlerimizde kullandığımız Modem'in bağladığımız her cihaz için yapılandırıldığı gibi Private IP'ler ile mahallelere caddelere, sokaklara, binalara yerleştirdiği kablolar aracılığı ile kendi merkezleri ve apartmanlardaki ağları birbirlerine bağlarlar. Evdeki bir bilgisayardan Modem'e CAT6 kablo çekmekten tek farkı mesafenin çok uzak olmasıdır. Dolayısıyla Servis Sağlayıcı da bizim Modem'imizden kendi merkez HOP'una kadar gerçek IP atamak zorunda değildir. Onlar da aynı şekilde Private IP'lerle Daire, Apartman, Sokak, Cadde, Mahalle, Semt, Şehir, Ülke tipolojisini oluştururlar. Servis Sağlayıcının internete çıkan dış bacakların gerçek IP olmak zorundadır. Yani örneğin Türk Telekom, müşterilerini kendisine bağlı aylarındaki tüm Network'leri ISP'den aldığı bu gerçek IP üzerinden internete çıkartıyor.
 
 
 
