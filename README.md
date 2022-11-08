@@ -28,7 +28,7 @@
      ==show flash== (Kullandığımız cihazı IOS'unun adını gösterir)
 ```
 
-10. [ ] 1 adet Server oluştur. Bu Server'ı TFTP trafiğini yönetebilir hale getiren süreci uygula.
+10. [x] 1 adet Server oluştur. Bu Server'ı TFTP trafiğini yönetebilir hale getiren süreci uygula.
 
 11. [ ] Router'lardan herhangi birinin NVRAM'ine yedekleme sürecini uygula.
 12. [ ] Router'lardan herhangi birinde Flash'ı sil. IOS yüklenememe sorunu ile karşılaşılacağından bunun çözüme giden süreci uygula.
