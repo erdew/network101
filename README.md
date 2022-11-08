@@ -49,10 +49,8 @@
 4. Her bir Octed toplam 8 Bit'ten oluşur. Octed'ler soldan sağa okunurlar ve soldaki Bit, en yüksek değere sahip Bit'tir.
 5. Her bir IP toplam 4 Octed'ten oluşur.
 ```
-------------------------
-| 128 64 32 16 8 4 2 1 |
-|  1  1  1  1  1 1 1 1 |
-------------------------
+ 128 64 32 16 8 4 2 1 
+  1  1  1  1  1 1 1 1 
 ```
 6. Soldan sağa bütün Bit'ler toplandığında 255 değeri elde edilir.
 7. Bu değer bir IP adresinin alabileceği maksimum Octed değerini ifade eder.
@@ -91,14 +89,11 @@ ping x.x.x.x
 32. Yukarıdaki senaryoya göre 192.168.1.0 bu Network'ün ID'sidir. 192.168.1.255 ise Broadcast'dir.
 33. Host olarak son Octed'in tamamı kaldığı için 2 üzeri 8'e eşit Host sayımız var demektir. 2 üzeri 8 = 256'dır. İlk ve son IP'leri atayamadığımız için 256 - 2 = 254 toplam atanabilir IP sonucuna erişebiliriz. Yukarıdaki senaryoya göre IP ve Subnet Mask'ın Binary karşılıkları;
 ```
--------------------------------------
-| 	   192.168.1.40/24          |
-|11000000.10101000.00000001.00101000|
--------------------------------------
----------------------------
-|	    /24		  |
-|	255.255.255.0	  |
----------------------------
+	   192.168.1.40/24          
+11000000.10101000.00000001.00101000
+
+  	         /24		  
+	    255.255.255.0	  
 ```
 34. Subnet Mask'ların maksimum değeri 255 olabilir çünkü; Binary olarak Octed üzerinden soldan sağa ilerledikleri için sadece Binary 1 olanların değerlerinin toplamına eşit olan sayıları alabilirler.
 35. IP'ler maksimum 2 üzeri 32'den verilmek zorunda olduğu için gerçek dünyada IP'lerin yetersiz kalması gibi bir tehlike söz konusudur.
