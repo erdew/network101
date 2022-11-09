@@ -1,6 +1,6 @@
 # Packet Tracer ToDo List
 
-1) [x] 2 adet PC oluştur, Ethernet'ten direkt bağla ve PC'lere Static IP ver. PC'lerin Command Prompt'undan Ping at.
+[x] 1) 2 adet PC oluştur, Ethernet'ten direkt bağla ve PC'lere Static IP ver. PC'lerin Command Prompt'undan Ping at.
 2. [x]  1 PC ve 1 Router'ı direkt Ethernet'ten birbirlerine bağlayıp
     PC'nin Command Promt'undan Ping at.
 3. [x] 3 adet PC'nin olduğu bir Network kurup her bir PC'nin bir
