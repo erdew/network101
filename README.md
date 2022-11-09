@@ -41,9 +41,8 @@
     ==show hosts== (Router'ların IP'lerini ve isimlerini listeler.)
     ==show cdp neighbors== (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
 ```
-15. [ ] DNS sürecini uygula.
-16. [ ] DHCP sürecini uygula.
-17. [ ] 4 şubeli ödevi yap.
-18. [ ] Dynamic Routing sürecini uygula.
+15. [x] DNS sürecini uygula.
+16. [ ] 4 şubeli ödevi yap.
+
 
 
