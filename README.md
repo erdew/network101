@@ -42,7 +42,7 @@
     ==show cdp neighbors== (Komşu Network cihazlarını gösterir, bazı durumlarda IP'leri bilemez ve Directly Connected IP'ler görüntülenir.)
 ```
 15. [x] (15) DNS sürecini uygula.
-16. [ ] (16) 4 şubeli ödevi yap.
+16. [ ] (16) 4 şubeli ödevi yap.(Network'lerden en az birini TelNet bağlantısı ile konfigüre et. En az bir Network'e Serial Port ile bağlantı kur. Tüm Network'ler için DNS ve DHCP kullan. Dynamic Routing Protokollerinden birisini kullanarak Network'ler arasındaki iletişimleri düzenle. Yaptığın tüm konfigürasyonları ve işlemleri yedekle.)
 
 
 
