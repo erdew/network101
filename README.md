@@ -125,6 +125,81 @@ E) 240.0.0.0 - 255.255.255.255
 46. IP'lerin dağıtımını ISP(Internet Sevice Provider) yapar. ISP Private IP'leri yukarıda anlattığımız sebeplerden dolayı ayırmıştır. Sonuç olarak A, B, C Class'larından başka hiç bir IP internete çıkamaz. Bir Network'ün tamamının internete çıkabilmesi için gerçek IP'ye sahip bir dış bacağa bağlı olması yeterlidir. Private IP'ler ücretsizdir. ISP size atadığı Static IP'yi başkasına veremez.
 47. Aslında ISP direkt olarak sizin Modem'inize gerçek IP atamaz. Sadece sizin Servis Sağlayıcı'nıza gerçek bir IP verir. Servis Sağlayıcı'lar tıpkı kendi evlerimizde kullandığımız Modem'in bağladığımız her cihaz için yapılandırıldığı gibi Private IP'ler ile mahallelere caddelere, sokaklara, binalara yerleştirdiği kablolar aracılığı ile kendi merkezleri ve apartmanlardaki ağları birbirlerine bağlarlar. Evdeki bir bilgisayardan Modem'e CAT6 kablo çekmekten tek farkı mesafenin çok uzak olmasıdır. Dolayısıyla Servis Sağlayıcı da bizim Modem'imizden kendi merkez HOP'una kadar gerçek IP atamak zorunda değildir. Onlar da aynı şekilde Private IP'lerle Daire, Apartman, Sokak, Cadde, Mahalle, Semt, Şehir, Ülke tipolojisini oluştururlar. Servis Sağlayıcının internete çıkan dış bacakların gerçek IP olmak zorundadır. Yani örneğin Türk Telekom, müşterilerini kendisine bağlı ağlarındaki tüm Network'leri ISP'den aldığı bu gerçek IP üzerinden internete çıkartıyor.
 
+---
+
+Daha önceki notlarda kabaca Network'ten, IP'lerden vs bahsedildi.
+Aşağıda konfigürasyon adına bahsedilen her şey Switch'ler için de geçerlidir.
+Ya da üzerinde aynı işletim sistemini barındıran herhangi bir cihaz için de geçerlidir.
+
+Switch ve Router'lar aynı işletim sistemine sahiplerdir.
+Bu cihazlara işletim sistemi aracılığıyla konfigürasyon yapabiliyoruz.
+
+Bir Router'a ilk defa konfigürasyon yapılacak ise bir PC ile PC'nin RS232 Port'undan Router'ın Console Port'una Console Kablosu ile bağlantı kurulur ve bu tür direkt olarak kablo ile yapılan bağlantılara "Serial Connection" denir.
+Bu aşamadan sonra Router'ların CLI'ına yani arayüzüne erişilir ve İşletim Sistem'i etkin bir şekilde kullanılabilir.
+Bir Router'un Startup Configuration'ı boş ise yani daha önceden bir konfigürasyon yapılmadıysa ya da yapılıp kaydedilmediyse temel konfigürasyonların yapılabilmesi için "yes/no" şeklinde konfigürasyon asistanının istenip istenmediğini kontrol eder.
+Kısaca "yes/no" sorusuyla karşılaşıyorsak o Router'ın üzerinde herhangi bir konfigürasyon bulunmuyor demektir.
+
+###Router ve Switch'lere yapılması önerilen "Basic Configuration"'lar:
+1. Router'a isim atamak: enable > conf terminal > hostname This is host name
+2. Açılış mesajı: enable > conf t > banner > login banner This is login banner, ya da banner motd This is message of the day.
+3. Console Port'una Password atamak: enable > conf t > line > line console 0 > password This is password > login(Şifrenin sorulmasını sağlar.)
+4. Enable Moduna Password atamak: enable > password This is enable password > login
+5. Tüm şifreleri kriptolamak: enable > conf t > service password-encryption
+6. Interface'lere açıklama eklemek: enable > conf t > interface f0/0 > description > This is desscription.
+7. Komut yazarken herhangi bir bildirim almamak için yazılması gereken komut: enable > conf t > line > console 0 > logging sychrous
+ 
+###Router'a TelNet ile bağlanmak
+Telnet Router'lara uzaktan erişim sağlayan bir protokoldür.
+Console Kablosu ile Router'a seri bağlantı yapmak demek, Router'a uzaklığımızın maksimum 1 metre olabileceği anlamına geliyor.
+Dolayısıyla kablo ile cihaza bağlanmak yerine genellikle Telnet tercih edilir.
+Telnet bağlantısı Enhernet port'ları üzerinden yapılır.
+Fakat Default'ta Router'ların Ethernet Port'ları kapalıdır, yani erişilebilir durumda değillerdir.
+Ayrıca Router'lar Default'ta Telnet iletişimine kapalılardır.
+Router'ı uzaktan kontrol etmek istediğimizde sıradan bir veri iletişimi sağlamıyoruz, özel bir istekte bulunuyoruz.
+Bu tarz özel durumlar için mutlaka kullanılması gereken protokoller ve uygulanması gereken bazı adımlar vardır.
+Telnet için atılacak adımlar:
+1. Enable'a Password atamış olmak.
+2. VTY Port'larına Password atamak.(VTY Port'ları Ethernet Port'un içersindeki Telnet protokolünün kullanacağı Sanal Port'ları ifade eder.)
+Maksimum 16 adet(0-15, 0 ve 15 dahil) VTY Port çalışabilir. Yani bir Client'ten Router'a Telnet'ten bağlandığımızda 1 adet VTY Port'unu meşgul ediyor olduğumuz anlamına gelir.
+VTY Port'ları Default'ta Login'dir. Dolayısıyla Manuel olarak Password atanmadığı sürece, sistem olmayan bir şifreyi sürekli sormaya çalşıyormuş gibi çalışır ve bu durum VTY Port'larının aslında kapalıymış gibi algılanmasına sebep olur.
+VTY Port'larına Password atamak: enable > conf t > line vty 0 15 > password This is Password for VTY Ports
+Client'ten Telnet ile Router'a bağlanmak için, Client'in Terminalinden telnet IP Adresi girilir, önce VTY Password sorulur daha sonra enable Password sorulur ve bu noktadan sonra erişilen Router'a istenilen konfigürasyon yapılabilir.
+
+###Router'larda SAVE yapmak
+Router'ların donanımlarında 3 önemli bileşen vardır.
+1. Flash - İşletim sisteminin yüklü olduğu hafıza.
+2. NVRAM(Startup Configuration) - Yapılmış olan konfigürasyonların kalıcı olarak tutulduğu hafıza.
+3. RAM(Runnig Configuration) - Henüz kaydedilmemiş olan konfigürasyonların geçici olarak tutulduğu hafıza.
+
+Router çalıştırıldığında önce Flash'tan RAM'e işletim sistemi yüklenir.
+Daha sonra NVRAM'de kaydedilmiş konfigürasyon var ise onlar da RAM'e yüklenir.
+Sonuç olarak bizim gördüğümüz, düzenleme yaptığımız her şey aslında RAM'de çalışır.
+Kayıt yaptığımızda RAM'deki konfigürasyonlar NVRAM'in üzerine yazılır.
+
+enable > copy r(running conf) s(startup conf) || copy s r
+ya da
+enable > w(write)
+
+###Router'da Pasword Resetlemek
+Diyelim ki  bir şirketteki bir Router'ı devraldık ve bu Router'ın NVRAM'indeki konfigürasyonları silmeden, bazı güncellemeler yapmak istiyoruz. Fakat bu Router'ın şifresini öğrenemediğimizi varsayalım. Böyle bir durumda Router'ı formatlamak zorunda kalmadan konfigürasyon yapabilmenin bir yöntemi vardır.
+Router'ların açılış modları vardır.
+Bu modlar işletim sistemleri RAM'e yüklenmeden önce seçilir ve ona göre boot edilir.
+Default'ta bu mod 0x2102 açılış modudur.
+Elimizdeki senaryoda Router'ın Power tuşuna basıp CTRL + Pause(Break) tuşlarıyla başlangıç modunu değiştirebileceğimiz adımı aktifleştiriyoruz.
+Bu noktada açılış modunu değiştirmek için şu komutları giriyoruz: confreg 0x2142 > reset.
+Router'ı farklı bir modda çalıştırdık ve şuanda NVRAM RAM'e yüklenmiş durumda değil.
+Sadece işletim sistemi RAM' yüklenmiş durumda.
+Bu sebeple Router, sanki NVRAM'in hiç bir konfigürasyon yokmuş gibi çalışmaya başlar fakat aslında NVRAM'i daha önceden yapılan konfigürasyonlarla doludur. Dolayısıyla şuanda kesinlikle Save yapılmamalıdır.
+Bu aşamada yazılması gereken komutlar:
+en > copy s r > en > conf t > line col 0 > no pw > no login exit > line vty 0 15 > exit > no en secret > config-register 0x2102 > do w > do reload
+Bu komutlardan sonra Router yeniden başlar ve Interface'leri down gelir, bunları tekrar no shutdown yapmak gerekiyor.
+Yukarıda yaptığımız şey özetle şudur; Route'ı farklı bir mod'ta başlatıp Startup Configuration'ınını Runnnig Configuration'a yükledik.
+Console'u seçip şifresini kaldırdık ve sormaması için no login dedik.
+VTY port'larını resetledik.
+Enable'ın şifresini kaldırdık.
+En son modu değiştirdik ve Router'u resetledik.
+Bunu yaptığımız için artık normal mod'ta açıldığında hiç bir şifre sormaz fakat bütün konfigürasyonlar hala yüklü durumdadır.
+Şuandan itibaren kendimiz tekrar istediğimiz şifreleri koyarak "copy r s" yaptığımızda Router açılışta bizim belirlediğimiz şifrelerle çalışır.
 
 
 
